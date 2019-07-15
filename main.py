@@ -9,7 +9,7 @@ screen_size = (screen_info.current_w, screen_info.current_h)
 
 size = (width, height) = (850, 480)
 screen = pygame.display.set_mode(size)
-clock = pygame.tick.Clock()
+clock = pygame.time.Clock()
 
 color = (255, 255, 255)
 fishes = []
@@ -33,12 +33,12 @@ def main():
                 if event.key == K_ESCAPE:
                     pygame.display.set_mode(size)
 
-    screen.fill(color)
-    for fish in fishes:
-        fish.update()
-    for fish in fishes:
-        fish.draw(screen)
-    pygame.display.flip()
+        screen.fill(color)
+        for fish in fishes:
+            fish.update()
+        for fish in fishes:
+            fish.draw(screen)
+        pygame.display.flip()
 
 if __name__=='__main__':
     main()
